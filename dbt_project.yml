@@ -36,3 +36,14 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+my-bigquery-db:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: model-shelter-332518
+      dataset: dbtLearnDataSet
+      threads: 1
+      keyfile: /credentials/model-shelter-332518-4386cb99b68c.json
